@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ENTREPRENEURSHIP QUIZ | 300 Questions | Quiz Mode</title>
+    <link rel="icon" href="image/both-books.jpg">
+    <!-- 4. Meta description – huge impact on click-through rate from search results -->
+    <meta name="description" content="this website contain past question and answers for the ced / ent examination.">
+
+    <!-- 5. Prevent search engines from indexing under-construction / staging pages (optional) -->
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+
+    <!-- 6. Open Graph tags – controls how your site looks when shared on LinkedIn, Facebook, WhatsApp, etc. Very important for professionals -->
+    <meta property="og:title" content="CED/ENT QUIZ PAGE | CEN/ENT page">
+    <meta property="og:description"
+        content="this website contain past question and answers for the ced / ent examination. ">
+    <meta property="og:image" content="image/both-books.jpg">
+    <!-- <meta property="og:url" content="https://ced&entquiz"> -->
+    <meta property="og:type" content="website">
+
+    <!-- 7. Twitter / X Cards (still widely used – nice bonus) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="this website contain past question and answers for the ced / ent examination. ">
+    <meta property="og:image" content="image/both-books.jpg">
+    <meta name="twitter:description"
+        content="this website contain past question and answers for the ced / ent examination.">
+    <meta name="twitter:image" content="https://x.com/i/status/2022455434024509633">
+    <meta name="twitter:site" content="https://x.com/CourageAzakaye?t=Y8ajLFjsydT3vgaXQVSPdg&s=09">
+
+    <!-- 8. Optional but recommended for serious/professional sites -->
+    <meta name="author" content="Azakaye courage">
+    <meta name="theme-color" content="#3b71fe">
+    <!-- browser bar color on mobile -->
+
+    <!-- 9. Favicon (modern formats – use multiple sizes) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- 10. Canonical tag (prevents duplicate content issues) -->
+    <!-- <link rel="canonical" href="https://ced&ent.com"> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Michroma&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="quiz-app">
+        <div class="hero">
+            <h1><i class="fas fa-chalkboard-user"></i> ENTREPRENEURSHIP MASTER PIECE<i class="fas fa-brain"></i></h1>
+            <br>
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="image/me.jpg" alt="" class="profile-img">
+                    <p>Compiled and developed by</p>
+                    <h2 class="profile-name">Azakaye Courage</h2>
+                </div>
+            </div>
+            <p><i class="fas fa-layer-group"></i> 300 questions · 10 chapters (30 Q each) · Quiz Mode (15 min timed)</p>
+        </div>
+
+        <div id="chapter-buttons" class="chapter-bar"></div>
+        <div id="quiz-container"></div>
+        <div id="result-container"></div>
+
+    </div>
+    <br> <br>
+    <div class="container-x">
+        <!-- form card -->
+        <div class="form-card">
+            <h2><i class="fa-regular fa-pen-to-square"></i> drop a message</h2>
+            <form action="https://api.staticforms.dev/submit" method="POST" id="messageForm">
+                <input type="hidden" name="apiKey" value="sf_f5097455fb5bce8c080c039b" />
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-user-circle"></i>
+                        <input type="text" id="nameInput" name="name" placeholder="full name" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="emailInput" name="email" placeholder="email address" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon textarea-group">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea id="messageInput" name="message" placeholder="your message..." rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> send message</button>
+            </form>
+
+            <!-- WhatsApp chat button (after submit) -->
+            <a href="https://wa.me/message/PUIPKZ7ZZI53P1" target="_blank" class="whatsapp-chat-btn">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- list card -->
+        <div class="list-card">
+            <h2><i class="fa-regular fa-rectangle-list"></i> message board <span id="count">(0)</span></h2>
+            <div id="listContainer" class="list-container">
+                <div class="empty-list">
+                    <i class="fa-regular fa-message"></i>
+                    no messages yet · be the first to write
+                </div>
+            </div>
+        </div>
+
+        <!-- back to home button (hidden initially) -->
+        <div id="backHomeContainer">
+            <button class="back-home-btn" id="backHomeBtn"><i class="fas fa-arrow-up"></i> Back to Home</button>
+        </div>
+
+        <!-- footer with about section + social icons -->
+        <footer class="main-footer">
+            <!-- NEW: About Website Section (added before social icons) -->
+            <div class="about-section">
+                <h3><i class="fa-regular fa-compass"></i> About Author</h3>
+                <p>I'm Azakaye Courage is a <strong>Computer Engineering</strong> student at <strong> UNIBEN</strong>,
+                    <strong>YouTube/online tutor </strong> for math, physics, engineering drawing + exam prep (JAMB,
+                    WAEC, university).
+                    Founder of <strong>Courbyte</strong> (coding & tech education).
+
+                    <strong>Full-stack web developer</strong> open to projects/collabs.
+                </p>
+            </div>
+            <h5>My Physics channels </h5>
+            <br>
+            <div class="social-icons">
+                <a href="https://youtube.com/@engineercourage1?si=0EBzsfu-4WCoMEZ7" target="_blank" title="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100067717681013" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="www.tiktok.com/@courageonlinephysics" target="_blank" title="TikTok"><i
+                        class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/courage_online_physics?igsh=bjJyMGw5dnZ5eTl1" target="_blank"
+                    title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/CourageAzakaye?t=Y8ajLFjsydT3vgaXQVSPdg&s=09" target="_blank" title="X"><i
+                        class="fab fa-x"></i></a>
+                <a href="https://whatsapp.com/channel/0029VagyldoJkK7BpAimPt00" target="_blank"
+                    title="WhatsApp channel"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <br>
+
+
+            <h5>My Math channels </h5>
+            <br>
+            <div class="social-icons">
+                <a href="https://youtube.com/@engineercourage?si=kfWRYgy77e9cJZ-Y" target="_blank" title="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100083066572112" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@engineercourage?_t=ZS-8zF6a7gmAAq&_r=1" target="_blank"
+                    title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/courage_online_maths_class?utm_source=qr&igsh=MTgzNHUwamZsNm1ncA=="
+                    target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/CourageAzakaye?t=Y8ajLFjsydT3vgaXQVSPdg&s=09" target="_blank" title="X"><i
+                        class="fab fa-x"></i></a>
+                <a href="https://whatsapp.com/channel/0029VagyldoJkK7BpAimPt00" target="_blank"
+                    title="WhatsApp channel"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </footer>
+    </div>
+    <footer>
+        <p>@2026 Powered by <strong>azakaye courage</strong> (Founder of Courbyte LLC) from Computer Engineering
+            Department
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
